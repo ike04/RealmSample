@@ -22,12 +22,17 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userAgeLabel: UILabel!
+    @IBOutlet weak var userCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-
+    @IBAction func didTappedRegiserButton(_ sender: Any) {
+    }
+    
 }
 
 
