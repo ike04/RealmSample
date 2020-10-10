@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var outputNameLabel: UILabel!
     @IBOutlet weak var userAgeLabel: UILabel!
@@ -49,19 +50,39 @@ class ViewController: UIViewController {
         
         userNameTextField.text = ""
         userAgeTextField.text = ""
+        self.viewDidLoad()
     }
+    
+    @IBAction func didTappedEditButton(_ sender: Any) {
+        let userInfo = realm.objects(UserInfo.self)
+        guard let name = userNameTextField.text,
+              let age = userAgeTextField.text,
+              let lastUser = userInfo.last else { return }
+        
+        try? realm.write {
+            lastUser.name = name
+            lastUser.age = Int(age)!
+        }
+        
+        userNameTextField.text = ""
+        userAgeTextField.text = ""
+        self.viewDidLoad()
+    }
+    
     @IBAction func didTeppedDeleteButton(_ sender: Any) {
         let userInfo = realm.objects(UserInfo.self)
         guard let lastUser = userInfo.last else { return }
         try? realm.write {
             realm.delete(lastUser)
         }
+        self.viewDidLoad()
     }
     
     @IBAction func didTappedAllUserDeleteButton(_ sender: Any) {
         try? realm.write {
             realm.deleteAll()
         }
+        self.viewDidLoad()
     }
     
     func fetchUserInfo() {

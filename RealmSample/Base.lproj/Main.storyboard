@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-9a-nl6">
-                                <rect key="frame" x="118" y="275" width="178" height="30"/>
+                                <rect key="frame" x="86" y="276" width="122" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="前回ログインユーザー情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDd-X6-FFR">
-                                <rect key="frame" x="86" y="378" width="243" height="21"/>
+                                <rect key="frame" x="32" y="378" width="243" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -69,40 +69,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-Qx-C4Y">
-                                <rect key="frame" x="86" y="453" width="210" height="28"/>
+                                <rect key="frame" x="112" y="445" width="210" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26N-gi-yvL">
-                                <rect key="frame" x="86" y="529" width="210" height="27"/>
+                                <rect key="frame" x="112" y="529" width="210" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTr-Jq-qRA">
-                                <rect key="frame" x="86" y="599" width="210" height="28"/>
+                                <rect key="frame" x="112" y="599" width="210" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-IH-Cea">
-                                <rect key="frame" x="129" y="671" width="157" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" 全ユーザー情報の削除"/>
-                                <connections>
-                                    <action selector="didTappedAllUserDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ck-zM-Q7l"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAA-pV-iec">
-                                <rect key="frame" x="329" y="374" width="31" height="30"/>
+                                <rect key="frame" x="310" y="373" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="削除"/>
                                 <connections>
                                     <action selector="didTeppedDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CGL-Kv-hSA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-bG-dJp">
+                                <rect key="frame" x="216" y="276" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="編集"/>
+                                <connections>
+                                    <action selector="didTappedEditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5IS-ny-Ngb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-IH-Cea">
+                                <rect key="frame" x="129" y="666" width="157" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" 全ユーザー情報の削除"/>
+                                <connections>
+                                    <action selector="didTappedAllUserDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ck-zM-Q7l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,6 +120,7 @@
                     <navigationItem key="navigationItem" title="ユーザ登録画面" id="dZK-Hf-AMC"/>
                     <connections>
                         <outlet property="allUserDeleteButton" destination="CJm-IH-Cea" id="mr0-Gy-xpe"/>
+                        <outlet property="editButton" destination="rbB-bG-dJp" id="W5H-fR-99b"/>
                         <outlet property="outputAgeLabel" destination="26N-gi-yvL" id="gsw-ul-AmT"/>
                         <outlet property="outputCountLabel" destination="UTr-Jq-qRA" id="DNF-oG-sPd"/>
                         <outlet property="outputNameLabel" destination="5BJ-Qx-C4Y" id="IAn-IE-55d"/>
