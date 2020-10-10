@@ -23,14 +23,21 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var outputNameLabel: UILabel!
     @IBOutlet weak var userAgeLabel: UILabel!
+    @IBOutlet weak var outputAgeLabel: UILabel!
     @IBOutlet weak var userCount: UILabel!
+    @IBOutlet weak var outputCountLabel: UILabel!
+    @IBOutlet weak var userDeleteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func didTappedRegiserButton(_ sender: Any) {
+    }
+    
+    @IBAction func didTappedDeleteButton(_ sender: Any) {
     }
     
 }
