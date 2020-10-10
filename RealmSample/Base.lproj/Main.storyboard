@@ -90,11 +90,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-IH-Cea">
-                                <rect key="frame" x="192" y="671" width="31" height="30"/>
+                                <rect key="frame" x="129" y="671" width="157" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" 全ユーザー情報の削除"/>
+                                <connections>
+                                    <action selector="didTappedAllUserDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ck-zM-Q7l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAA-pV-iec">
+                                <rect key="frame" x="329" y="374" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="削除"/>
                                 <connections>
-                                    <action selector="didTappedDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ck-zM-Q7l"/>
+                                    <action selector="didTeppedDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CGL-Kv-hSA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,6 +111,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ユーザ登録画面" id="dZK-Hf-AMC"/>
                     <connections>
+                        <outlet property="allUserDeleteButton" destination="CJm-IH-Cea" id="mr0-Gy-xpe"/>
                         <outlet property="outputAgeLabel" destination="26N-gi-yvL" id="gsw-ul-AmT"/>
                         <outlet property="outputCountLabel" destination="UTr-Jq-qRA" id="DNF-oG-sPd"/>
                         <outlet property="outputNameLabel" destination="5BJ-Qx-C4Y" id="IAn-IE-55d"/>
@@ -110,7 +119,7 @@
                         <outlet property="userAgeLabel" destination="hbZ-iF-qeX" id="rAA-A4-jvu"/>
                         <outlet property="userAgeTextField" destination="D4m-kx-7tV" id="OLj-K9-MbJ"/>
                         <outlet property="userCount" destination="PMy-NU-4Cd" id="tsT-OK-zAx"/>
-                        <outlet property="userDeleteButton" destination="CJm-IH-Cea" id="mr0-Gy-xpe"/>
+                        <outlet property="userDeleteButton" destination="uAA-pV-iec" id="3Wd-uK-gVD"/>
                         <outlet property="userNameLabel" destination="Z3v-ES-4yA" id="vM8-G4-kkz"/>
                         <outlet property="userNameTextField" destination="Hm9-Fw-bfp" id="UOB-ks-ZKY"/>
                     </connections>

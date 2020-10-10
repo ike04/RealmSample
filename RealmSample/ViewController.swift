@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var userCount: UILabel!
     @IBOutlet weak var outputCountLabel: UILabel!
     @IBOutlet weak var userDeleteButton: UIButton!
+    @IBOutlet weak var allUserDeleteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,18 @@ class ViewController: UIViewController {
         userNameTextField.text = ""
         userAgeTextField.text = ""
     }
+    @IBAction func didTeppedDeleteButton(_ sender: Any) {
+        let userInfo = realm.objects(UserInfo.self)
+        guard let lastUser = userInfo.last else { return }
+        try? realm.write {
+            realm.delete(lastUser)
+        }
+    }
     
-    @IBAction func didTappedDeleteButton(_ sender: Any) {
+    @IBAction func didTappedAllUserDeleteButton(_ sender: Any) {
+        try? realm.write {
+            realm.deleteAll()
+        }
     }
     
     func fetchUserInfo() {
