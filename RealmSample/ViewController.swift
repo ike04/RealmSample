@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
+    let realm = try! Realm()
+    private var userInfo = UserInfo()
 
     @IBOutlet weak var userNameTextField: UITextField!  {
         didSet {
@@ -32,14 +35,32 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUserInfo()
     }
 
     @IBAction func didTappedRegiserButton(_ sender: Any) {
+        guard let name = userNameTextField.text,
+              let age = userAgeTextField.text else { return }
+        
+        try? realm.write {
+            realm.add(UserInfo(value: ["name": name, "age": Int(age) as Any]))
+        }
+        
+        userNameTextField.text = ""
+        userAgeTextField.text = ""
     }
     
     @IBAction func didTappedDeleteButton(_ sender: Any) {
     }
     
+    func fetchUserInfo() {
+        let userInfo = realm.objects(UserInfo.self)
+        guard let lastUser = userInfo.last else { return }
+        
+        outputNameLabel.text = lastUser.name
+        outputAgeLabel.text = String(lastUser.age)
+        outputCountLabel.text = String(userInfo.count)
+    }
 }
 
 

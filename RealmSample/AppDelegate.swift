@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         // 保存されている User 全てを列挙
                         migration.enumerateObjects(ofType: UserInfo.className()) { (oldObject, newObject) in
                             let name = oldObject!["name"] as! String
-                            let age = oldObject!["age"] as! String
+                            let age = oldObject!["age"] as! Int
                         }
                     }
                 }
                 // 現在のRealmファイルの schemaVersion と、下記で設定した schemaVersion が違うと、マイグレーションが実行される
-                config.schemaVersion = 1
+                config.schemaVersion = 2
                 Realm.Configuration.defaultConfiguration = config
         
         return true
