@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-9a-nl6">
-                                <rect key="frame" x="86" y="276" width="122" height="30"/>
+                                <rect key="frame" x="86" y="270" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
@@ -89,8 +89,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-IH-Cea">
+                                <rect key="frame" x="129" y="666" width="157" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" 全ユーザー情報の削除"/>
+                                <connections>
+                                    <action selector="didTappedAllUserDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ck-zM-Q7l"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAA-pV-iec">
-                                <rect key="frame" x="310" y="373" width="31" height="30"/>
+                                <rect key="frame" x="314" y="376" width="31" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="削除"/>
                                 <connections>
@@ -98,19 +106,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-bG-dJp">
-                                <rect key="frame" x="216" y="276" width="113" height="30"/>
+                                <rect key="frame" x="206" y="270" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="編集"/>
+                                <state key="normal" title="前回ユーザー編集"/>
                                 <connections>
                                     <action selector="didTappedEditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5IS-ny-Ngb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-IH-Cea">
-                                <rect key="frame" x="129" y="666" width="157" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" 全ユーザー情報の削除"/>
-                                <connections>
-                                    <action selector="didTappedAllUserDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ck-zM-Q7l"/>
                                 </connections>
                             </button>
                         </subviews>
