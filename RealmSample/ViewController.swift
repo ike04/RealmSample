@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
+    let realm = try! Realm()
+    private var userInfo = UserInfo()
 
     @IBOutlet weak var userNameTextField: UITextField!  {
         didSet {
@@ -22,6 +25,7 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var outputNameLabel: UILabel!
     @IBOutlet weak var userAgeLabel: UILabel!
@@ -29,17 +33,66 @@ class ViewController: UIViewController {
     @IBOutlet weak var userCount: UILabel!
     @IBOutlet weak var outputCountLabel: UILabel!
     @IBOutlet weak var userDeleteButton: UIButton!
+    @IBOutlet weak var allUserDeleteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUserInfo()
     }
 
     @IBAction func didTappedRegiserButton(_ sender: Any) {
+        guard let name = userNameTextField.text,
+              let age = userAgeTextField.text else { return }
+        
+        try? realm.write {
+            realm.add(UserInfo(value: ["name": name, "age": Int(age) as Any]))
+        }
+        
+        userNameTextField.text = ""
+        userAgeTextField.text = ""
+        self.viewDidLoad()
     }
     
-    @IBAction func didTappedDeleteButton(_ sender: Any) {
+    @IBAction func didTappedEditButton(_ sender: Any) {
+        let userInfo = realm.objects(UserInfo.self)
+        guard let name = userNameTextField.text,
+              let age = userAgeTextField.text,
+              let lastUser = userInfo.last else { return }
+        
+        try? realm.write {
+            lastUser.name = name
+            lastUser.age = Int(age)!
+        }
+        
+        userNameTextField.text = ""
+        userAgeTextField.text = ""
+        self.viewDidLoad()
     }
     
+    @IBAction func didTeppedDeleteButton(_ sender: Any) {
+        let userInfo = realm.objects(UserInfo.self)
+        guard let lastUser = userInfo.last else { return }
+        try? realm.write {
+            realm.delete(lastUser)
+        }
+        self.viewDidLoad()
+    }
+    
+    @IBAction func didTappedAllUserDeleteButton(_ sender: Any) {
+        try? realm.write {
+            realm.deleteAll()
+        }
+        self.viewDidLoad()
+    }
+    
+    func fetchUserInfo() {
+        let userInfo = realm.objects(UserInfo.self)
+        guard let lastUser = userInfo.last else { return }
+        
+        outputNameLabel.text = lastUser.name
+        outputAgeLabel.text = String(lastUser.age)
+        outputCountLabel.text = String(userInfo.count)
+    }
 }
 
 
